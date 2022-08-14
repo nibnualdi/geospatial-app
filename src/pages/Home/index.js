@@ -66,9 +66,9 @@ const Home = ({
           <Link to="/charts" className={styles.link}>
             <p>Charts</p>
           </Link>
-          <Link to="/privacy-policy" className={styles.link}>
+          <a href="https://www.freeprivacypolicy.com/live/f374f0c7-caad-4da5-80b7-c6824d639074" className={styles.link}>
             <p>Privacy Policy</p>
-          </Link>
+          </a>
         </nav>
       </div>
     </div>
