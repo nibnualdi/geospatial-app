@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Home.module.css";
 
 // react router dom
 import { Link } from "react-router-dom";
@@ -56,11 +57,20 @@ const Home = ({
         setCensusDuplicated={setCensusDuplicated}
         setShowSideDetail={setShowSideDetail}
       />
-      <nav style={{ position: "absolute", bottom: 0, zIndex: 1001 }}>
-        <Link to="/">Home</Link>
-        <Link to="/charts">Charts</Link>
-        <Link to="/privacy-policy">Privacy Policy</Link>
-      </nav>
+
+      <div className={styles.navContainer}>
+        <nav style={{ position: "absolute", bottom: 0, zIndex: 1001 }} className={styles.nav}>
+          <Link to="/" className={styles.link}>
+            <p>Home</p>
+          </Link>
+          <Link to="/charts" className={styles.link}>
+            <p>Charts</p>
+          </Link>
+          <a href="https://www.freeprivacypolicy.com/live/f374f0c7-caad-4da5-80b7-c6824d639074" className={styles.link}>
+            <p>Privacy Policy</p>
+          </a>
+        </nav>
+      </div>
     </div>
   );
 };
