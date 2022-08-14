@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+
 // mapbox && geojson
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -12,6 +14,7 @@ import {
  } from "../../utils/geojson";
 mapboxgl.accessToken = process.env.REACT_APP_TOKEN_MAPBOX;
 
+mapboxgl.workerClass = MapboxWorker;
 const Maps = ({ setCensus, setCensusDuplicated, setShowSideDetail }) => {
   const mapContainer = useRef();
 
