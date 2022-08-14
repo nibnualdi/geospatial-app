@@ -6,17 +6,18 @@ import { MatrixController, MatrixElement } from "chartjs-chart-matrix";
 import { Link, Outlet } from "react-router-dom";
 import styles from "./Charts.module.css";
 import { useEffect } from "react";
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from "react-router-dom";
 
 const Charts = () => {
   Chart.register(CategoryScale, SankeyController, Flow, MatrixController, MatrixElement);
-  const location = useLocation()
-  let [chartName, setChartName] = useState("")
+  const location = useLocation();
+  let [chartName, setChartName] = useState("");
 
   useEffect(() => {
-    const pathnameSplited = location.pathname.split("/")
+    const pathnameSplited = location.pathname.split("/");
     setChartName(pathnameSplited[pathnameSplited.length - 1]);
   }, [location]);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.h1}>{chartName} Chart</h1>

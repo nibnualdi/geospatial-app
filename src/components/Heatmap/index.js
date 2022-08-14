@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Bar, Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
 import { color } from "chart.js/helpers";
 import styles from "./Heatmap.module.css";
 
@@ -17,11 +15,29 @@ const Heatmap = () => {
           { x: 1, y: 2, v: 12 },
           { x: 1, y: 3, v: 13 },
           { x: 2, y: 1, v: 21 },
-          { x: 2, y: 2, v: 22 },
-          { x: 2, y: 3, v: 23 },
+          { x: 2, y: 2, v: 12 },
+          { x: 2, y: 3, v: 13 },
           { x: 3, y: 1, v: 31 },
-          { x: 3, y: 2, v: 32 },
+          { x: 3, y: 2, v: 12 },
           { x: 3, y: 3, v: 33 },
+          { x: 4, y: 1, v: 11 },
+          { x: 4, y: 2, v: 32 },
+          { x: 4, y: 3, v: 33 },
+          { x: 5, y: 1, v: 1 },
+          { x: 5, y: 2, v: 12 },
+          { x: 5, y: 3, v: 33 },
+          { x: 6, y: 1, v: 41 },
+          { x: 6, y: 2, v: 62 },
+          { x: 6, y: 3, v: 33 },
+          { x: 7, y: 1, v: 21 },
+          { x: 7, y: 2, v: 12 },
+          { x: 7, y: 3, v: 73 },
+          { x: 8, y: 1, v: 81 },
+          { x: 8, y: 2, v: 32 },
+          { x: 8, y: 3, v: 13 },
+          { x: 9, y: 1, v: 34 },
+          { x: 9, y: 2, v: 32 },
+          { x: 9, y: 3, v: 3 },
         ],
         backgroundColor(context) {
           const value = context.dataset.data[context.dataIndex].v;
@@ -34,7 +50,7 @@ const Heatmap = () => {
           return color("darkgreen").alpha(alpha).rgbString();
         },
         borderWidth: 1,
-        width: ({ chart }) => (chart.chartArea || {}).width / 3 - 1,
+        width: ({ chart }) => (chart.chartArea || {}).width / 9 - 1,
         height: ({ chart }) => (chart.chartArea || {}).height / 3 - 1,
       },
     ],
