@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 
 // pages
 import Home from "./pages/Home";
+import Charts from "./pages/Charts";
 
 function App() {
   let [showSideDetail, setShowSideDetail] = useState(false);
@@ -51,7 +52,7 @@ function App() {
           />
         }
       />
-      <Route path="/charts" element={<>hai???</>} />
+      <Route path="/charts" element={<Charts />} />
     </Routes>
   );
 }
